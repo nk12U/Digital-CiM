@@ -170,7 +170,7 @@ module tb_tsmccim;
             endcase
         end
 
-        repeat (4) @(negedge CLK);
+        repeat (10) @(negedge CLK);
 
         $display("\n--- Simulation Finish ---");
         $finish;
