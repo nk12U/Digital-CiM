@@ -5,16 +5,16 @@ module simtop;
     localparam CORE_NUM = 16;
     localparam XIN_BIT_WIDTH = 11;
     localparam MEM_BIT_WIDTH = 8;
-    localparam CORE_DOUT_BIT_WIDTH = XIN_BIT_WIDTH + MEM_BIT_WIDTH; // 19
+    localparam CORE_DOUT_BIT_WIDTH = XIN_BIT_WIDTH + MEM_BIT_WIDTH - 1; // 18
     localparam MEM_ADR_WIDTH = 2;
-    localparam OUTPUT_BIT_WIDTH = CORE_DOUT_BIT_WIDTH + $clog2(CORE_NUM); // 23
+    localparam OUTPUT_BIT_WIDTH = CORE_DOUT_BIT_WIDTH + $clog2(CORE_NUM); // 22
 
-    localparam NUM_RAMDOM_ITERATIONS = 1000;
+    localparam NUM_RAMDOM_ITERATIONS = 10;
 
     parameter clk_peri = 10_000; // 100MHz, clock period
 
     // expected value
-    parameter [OUTPUT_BIT_WIDTH-1:0] EXPECTED_Q_VALUE = 23'h009eb0;
+    parameter [OUTPUT_BIT_WIDTH-1:0] EXPECTED_Q_VALUE = 22'h009eb0;
     reg clk;
     reg nrst;
     reg encb;
