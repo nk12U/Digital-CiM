@@ -2,9 +2,9 @@
         localparam CORE_NUM = 16;
         localparam XIN_BIT_WIDTH = 11;
         localparam MEM_BIT_WIDTH = 8;
-        localparam CORE_DOUT_BIT_WIDTH = XIN_BIT_WIDTH + MEM_BIT_WIDTH; // 19
+        localparam CORE_DOUT_BIT_WIDTH = XIN_BIT_WIDTH + MEM_BIT_WIDTH - 1; // 18
         localparam MEM_ADR_WIDTH = 2;
-        localparam OUTPUT_BIT_WIDTH = CORE_DOUT_BIT_WIDTH + $clog2(CORE_NUM); // 23
+        localparam OUTPUT_BIT_WIDTH = CORE_DOUT_BIT_WIDTH + $clog2(CORE_NUM); // 22
 
         //initialize
         #0 nrst = 1'b1;
